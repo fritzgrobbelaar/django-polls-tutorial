@@ -3,7 +3,7 @@ from django.shortcuts import render,get_object_or_404
 from django.template import loader
 from django.http import HttpResponse
 import datetime
-from polls.models import Question
+from polls.models import Question,Choice
 
 def fritz(request):
         return HttpResponse("Hello, world. You're at the polls index - Fritz: "+str(datetime.datetime.now()))
@@ -12,9 +12,11 @@ def fritz(request):
 
 def detail(request, question_id):
     latest_question = get_object_or_404(Question,pk=question_id)
-    template = loader.get_template("polls/detail.html")
+    #choices = get_object_or_404(Choice,pk=)
+    #template = loader.get_template("polls/detail.html")
     context = {'question': latest_question}
-    return HttpResponse(template.render(context,request))
+    return render(request,'polls/detail.html',context)
+ #   return HttpResponse(template.render(context,request))
 
 #    return HttpResponse("You're looking at question %s." %question_id)
 
