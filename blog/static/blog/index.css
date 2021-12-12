@@ -1,0 +1,19 @@
+
+h1 {	
+	font-family: Arial, Helvetica, sans-serif;
+	color:purple;
+	text-align:center;
+}
+
+p,ul,li {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:center;
+	align-items:center;
+	color:blue;
+}
+
+body {
+	background-image: url("images/back_ground.jpg");
+	background-repeat: no-repeat ;
+	background-size:cover
+}

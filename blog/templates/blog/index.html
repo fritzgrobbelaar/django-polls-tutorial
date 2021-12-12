@@ -1,0 +1,17 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blog/index.css' %}">
+<html>
+{% if latest_blog_list %}
+<h1>Recent blogs</h1>
+<ul>
+{% for blog in latest_blog_list %}
+<li><a  href="{% url 'blog:reader' blog.id %}"> {{ blog.blog_subject }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No blogs are available</p>
+{% endif %}
+
+<a href="{% url 'blog:postnew' %}">post new</a>
+</html>

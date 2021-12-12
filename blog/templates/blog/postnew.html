@@ -1,0 +1,19 @@
+<form action="{% url 'blog:submit'  %}" method="post">
+{% csrf_token %}
+
+<fieldset>
+
+        <h1>Post new blog</h1>
+    {% if error_message %} <p><strong>{{ error_message }}</strong></p>{% endif %}    
+
+        <label for="fname">Publisher name</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Subject</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="bname">Blog</label><br>
+        <input type="text" id="blog" name="blog">
+        
+
+</fieldset>
+<input type="submit" value="Submit">
+</form>
